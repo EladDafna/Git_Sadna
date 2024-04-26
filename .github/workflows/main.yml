@@ -1,0 +1,19 @@
+name: Simple_work
+on:
+  push:
+    branches:
+      - main
+jobs:
+  job-1:
+    runs-on: ununtu-latest
+    steps:
+    
+      - name: Print Hello
+        run: echo "Hello WOrld From Job-1"
+
+  job-2:
+    runs-on: ununtu-latest
+    steps:
+       - name: Print Hello
+         run: echo "Hello WOrld From Job-2"
+  
