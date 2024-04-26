@@ -1,4 +1,7 @@
 name: Simple_work
+env:
+  MY_APP_NAME: "My_App"
+  MY_PACKAGE_NAME: "Myapp-version-${{ github.sha }}"
 on:
   push:
     branches:
@@ -13,6 +16,7 @@ jobs:
         run: |
               touch 1.txt
               ls -la
+              echo "My Application name is: ${{ env.MY_APP_NAME }}"
               pwd
       - name: sleep
         run: sleep 3
@@ -23,8 +27,8 @@ jobs:
     steps:
        - name: Print Hello
          run: echo "Hello WOrld From Job-2"
-       - name: run ls -la
-         run: ls -la
+       - name: Print Name
+         run: echo "My Application name is :${{ env.MY_PACKAGE_NAME }}"
        - name: sleep
          run: sleep 3
   
