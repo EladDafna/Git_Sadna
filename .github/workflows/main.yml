@@ -17,7 +17,7 @@ jobs:
         
       - name: Multi Command
         run: |
-              touch 1.txt
+              touch 9.txt
               ls -la
               echo "My Application name is: ${{ env.MY_APP_NAME }}"
               echo "VAR1 value is:${{ env.VAR1 }}"
