@@ -12,6 +12,9 @@ jobs:
     steps:
       - name: Print Hello
         run: echo "Hello WOrld From Job-1"
+      - name: Git clone my repository
+        uses: actions/checkout@v2
+        
       - name: Multi Command
         run: |
               touch 1.txt
@@ -32,8 +35,13 @@ jobs:
            echo "VAR1 value is:${{ env.VAR1 }}"
            echo "VAR1 value is:${{ env.VAR2 }}"
            echo "this is my local var :$LOCAL_VAR"
+           ls -la
+           pwd
          env:
            LOCAL_VAR: "This is superr local Enviroment variable"
+       - name: Git clone my repository
+         uses: actions/checkout@v2
+       - run: ls -la
        - name: Print Name
          run: echo "My Application name is :${{ env.MY_PACKAGE_NAME }}"
 
